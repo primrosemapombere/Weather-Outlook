@@ -5,47 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/style.css" />
 
-    <title>My weather application</title>
+    <title>Prim's weather app</title>
   </head>
   <body>
-    <div class="weather-app">
-      <header>
-        <form id="search-form">
-          <input
-            type="search"
-            placeholder="Enter a city.."
-            required
-            class="search-input"
-            id="search-input"
-          />
-          <input type="submit" value="Search" class="search-button" />
-        </form>
-      </header>
-      <main>
-        <div class="current-weather">
-          <div>
-            <h1 class="current-city" id="current-city">Harare</h1>
-            <p class="current-details">
-              <span id="current-date"></span>, moderate rain <br />
-              Humidity: <strong>69%</strong>, Wind: <strong>5.3km/h</strong>
-            </p>
-          </div>
-          <div class="current-temperature">
-            <span class="current-temperature-icon">☀️</span
-            ><span class="current-temperature-value">24</span
-            ><span class="current-temperature-unit">°C</span>
-          </div>
-        </div>
-      </main>
-      <footer>
+    <div class="logo">
+      <img
+        id="logo"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/130/original/1816951.png?1724740056"
+        width="100px"
+        alt="weather illustration"
+      />
+    </div>
+
+    <div class="container">
+      <form id="inputForm">
+        <input
+          class="input-data"
+          id="search-form-input"
+          type="search"
+          placeholder="Enter a city"
+          required
+        />
+        <input class="submit-data" type="submit" value="Search" />
+        <hr />
+        <h1 id="city"></h1>
         <p>
+          <span id="time"></span>, <span id="clouds"></span><br />
+          Humidity: <strong id="humidity"></strong>, Wind:
+          <strong id="speed"></strong>
+        </p>
+        <h2 class="main">
+          <img
+            id="weather-icon"
+            class="weather-icon"
+            src=""
+            alt="Weather Icon"
+          />
+          <span id="temperature"></span><span class="centi">°C</span>
+        </h2>
+        <div id="forecast" class="weather-forecast"></div>
+      </form>
+      <hr />
+      <footer>
+        <h3>
           This project was coded by
           <a href="https://github.com/primrosemapombere" target="_blank"
             >Primrose Mapombere</a
@@ -63,7 +72,7 @@
             target="_blank"
             >hosted on Netlify</a
           >
-        </p>
+        </h3>
       </footer>
     </div>
   </body>
